@@ -580,13 +580,15 @@ main {
           display: inline;
           font-size: 16px; }
       main section.model .model__main .main__content .content__img {
-        width: calc(50% - 25px);
-        margin-right: 25px; }
+        width: calc(50% - 20px);
+        margin-right: 20px; }
         main section.model .model__main .main__content .content__img .img__main {
           width: 100%;
-          margin-bottom: 25px; }
+          margin-bottom: 25px;
+          height: 600px; }
           main section.model .model__main .main__content .content__img .img__main img {
-            width: 100%; }
+            width: 100%;
+            height: 100%; }
         main section.model .model__main .main__content .content__img .img__sub {
           display: grid;
           grid-template-columns: 22% 22% 22% 22%;
@@ -906,6 +908,41 @@ footer {
         height: 90vw; }
     main section.work-top {
       margin-top: 3.2vw; }
+      main section.work-top .work__item {
+        padding: 4vw 6vw 6.67vw;
+        display: block; }
+        main section.work-top .work__item .work__item__content {
+          width: 100%; }
+          main section.work-top .work__item .work__item__content .item__title {
+            font-size: 8.6vw;
+            margin-bottom: 3.2vw; }
+          main section.work-top .work__item .work__item__content .item__content {
+            font-size: 2.67vw;
+            margin-bottom: 3.2vw; }
+          main section.work-top .work__item .work__item__content .item__detail {
+            font-size: 2vw; }
+        main section.work-top .work__item .work__item__btn {
+          width: 100%;
+          position: relative; }
+          main section.work-top .work__item .work__item__btn .work__link {
+            position: relative;
+            display: block;
+            width: 100%;
+            text-align: center;
+            border-radius: 1vw;
+            padding: 2.67vw 0;
+            font-size: 2.67vw;
+            margin-top: 4vw; }
+        main section.work-top .work__item.work__item--model {
+          background-image: url(../img/work/work-model.png); }
+        main section.work-top .work__item.work__item--liver {
+          background-image: url(../img/work/work-liver.png);
+          flex-direction: row-reverse; }
+          main section.work-top .work__item.work__item--liver .work__item__btn .work__link {
+            right: unset;
+            left: 0; }
+        main section.work-top .work__item.work__item--pro {
+          background-image: url(../img/work/work-pro.png); }
     main section.info-top {
       margin-top: 3vw; }
       main section.info-top .info-list__main {
@@ -1036,7 +1073,8 @@ footer {
           margin-right: 0; }
           main section.model .model__main .main__content .content__img .img__main {
             width: 100%;
-            margin-bottom: 25px; }
+            margin-bottom: 25px;
+            height: 130vw; }
             main section.model .model__main .main__content .content__img .img__main img {
               width: 100%; }
           main section.model .model__main .main__content .content__img .img__sub {
