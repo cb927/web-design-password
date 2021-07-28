@@ -3,7 +3,6 @@ body {
 }
 
 .container {
-    max-width: 1280px;
     width: 100%;
     margin: auto;
     background: white;
@@ -141,7 +140,7 @@ body {
 
     span {
         display: block;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 42px;
     }
 
@@ -237,7 +236,7 @@ main {
                     @include transition-all();
                     width: 100%;
                     height: 100%;
-                    filter: grayscale(100%);
+                    filter: grayscale(0%);
                 }
 
                 .item__cover {
@@ -263,7 +262,7 @@ main {
 
                 &:hover {
                     img {
-                        filter: grayscale(0%);
+                        filter: grayscale(100%);
                     }
 
                     .item__cover {
@@ -298,26 +297,72 @@ main {
         //top page
         &.work-top {
             margin-top: 30px;
-            @include display-flex();
-            @include justify-content-space-between();
-
+            color: white;
             .work__item {
-                display: block;
-                margin-right: 20px;
-                height: 120px;
-                overflow: hidden;
-
-                // border: 1px solid #CEA31E;
-                &:nth-last-of-type(1) {
-                    margin-right: 0;
+                padding: 30px 45px 50px;
+                @include display-flex;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                .work__item__content {
+                    line-height: 1.5;
+                    width: 50%;
+                    .item__title {
+                        font-size: 65px;
+                        font-weight: normal;
+                        margin-bottom: 24px;
+                    }
+                    .item__content {
+                        font-size: 20px;
+                        margin-bottom: 24px;
+                    }
+                    .item__detail {
+                        font-size: 15px;
+                    }
                 }
-
-                img {
-                    height: 100%;
+                .work__item__btn {
+                    width: 50%;
+                    position: relative;
+                    .work__link {
+                        display: block;
+                        width: 300px;
+                        text-align: center;
+                        border-radius: 5px;
+                        padding: 20px 0;
+                        font-size: 20px;
+                        line-height: 1.5;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        &.work__link--model {
+                            background: #3E2EFF;
+                        }
+                        &.work__link--liver {
+                            background: #EA6300;
+                        }
+                        &.work__link--pro {
+                            background: #EAC600;
+                        }
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
                 }
-
-                &:hover {
-                    opacity: 0.7;
+                &.work__item--model {
+                    background-image: url(../img/work/work-model.png);
+                }
+                &.work__item--liver {
+                    background-image: url(../img/work/work-liver.png);
+                    flex-direction: row-reverse;
+                    .work__item__btn {
+                        .work__link {
+                            right: unset;
+                            left: 0;
+                        }
+                    }
+                }
+                &.work__item--pro {
+                    background-image: url(../img/work/work-pro.png);
                 }
             }
         }
@@ -532,7 +577,7 @@ main {
                             display: grid;
                         }
 
-                        grid-template-columns: 24% 24% 24% 24%;
+                        grid-template-columns: 230px 230px 230px 230px;
                         column-gap: 1.33333333%;
 
                         .model__item {
@@ -995,7 +1040,7 @@ footer {
         }
 
         span {
-            font-size: 6.5vw;
+            font-size: 6.5vw;
             line-height: 11.2vw;
         }
 
@@ -1069,22 +1114,6 @@ footer {
             //top page
             &.work-top {
                 margin-top: 3.2vw;
-                display: block;
-
-                .work__item {
-                    width: 100%;
-                    margin-right: 0;
-                    margin-bottom: 2vw;
-                    height: 30vw;
-
-                    img {
-                        width: 100%;
-                    }
-
-                    &:nth-last-of-type(1) {
-                        margin-bottom: 0;
-                    }
-                }
             }
 
             &.info-top {
