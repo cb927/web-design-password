@@ -505,6 +505,12 @@ main {
             .model__main {
                 padding: 32px 20px;
 
+                .model_main_top{
+                    height: 500px;
+                    border: 1px solid red;
+                    margin-bottom: 50px;
+                }
+
                 .tabs {
                     position: relative;
 
@@ -512,10 +518,16 @@ main {
                     @include justify-content-space-between;
 
                     .categories {
-                        @include display-flex;
+                        // @include display-flex;
+                        &:hover {
+                            height: 28px;
+                            .tab-link {
+                                display: block;
+                            }
+                        }
 
                         .tab-link {
-                            display: block;
+                            display: none;
                             margin: 0 10px;
                             font-size: 13px;
                             line-height: 28px;
@@ -524,51 +536,15 @@ main {
                             background: #262626;
                             color: white;
                             position: relative;
-
-                            &::before {
-                                @include transition-all;
-
-                                position: absolute;
-                                content: "";
-                                right: -10px;
-                                top: 0;
-                                border-left: 10px solid #262626;
-                                border-bottom: 28px solid transparent;
-                            }
-
-                            &::after {
-                                @include transition-all;
-
-                                position: absolute;
-                                content: "";
-                                left: -10px;
-                                bottom: 0;
-                                border-right: 10px solid #262626;
-                                border-top: 28px solid transparent;
-                            }
+                            z-index: 999;
 
                             &.active {
+                                display: block;
                                 background: #707070;
-
-                                &::before {
-                                    border-left: 10px solid #707070;
-                                }
-
-                                &::after {
-                                    border-right: 10px solid #707070;
-                                }
                             }
 
                             &:hover {
                                 background: #707070;
-
-                                &::before {
-                                    border-left: 10px solid #707070;
-                                }
-
-                                &::after {
-                                    border-right: 10px solid #707070;
-                                }
                             }
                         }
                     }
@@ -618,18 +594,18 @@ main {
                             display: grid;
                         }
 
-                        grid-template-columns: 230px 230px 230px 230px;
-                        column-gap: 1.33333333%;
+                        grid-template-columns: 19.5% 19.5% 19.5% 19.5% 19.5%;
+                        column-gap: 0.5%;
 
                         .model__item {
-                            display: inline-Cblock;
-                            margin-bottom: 15px;
+                            display: inline-block;
                             height: fit-content;
+                            position: relative;
+                            margin-bottom: 15px;
 
                             .item__img {
                                 width: 100%;
-                                height: 300px;
-                                margin-bottom: 12px;
+                                height: 200px;
                                 overflow: hidden;
 
                                 img {
@@ -641,7 +617,13 @@ main {
                             }
 
                             .item__name {
-                                color: #707070;
+                                position: absolute;
+                                width: 100%;
+                                left: 0;
+                                bottom: 0;
+                                color: white;
+                                line-height: 2.5;
+                                background: rgba($color: #0282b3, $alpha: 0.7);
                                 text-align: center;
                             }
 
@@ -1309,49 +1291,24 @@ footer {
                 .model__main {
                     padding: 4vw 0;
 
+                    .model_main_top{
+                        height: 100vw;
+                        margin-bottom: 6.67vw;
+                    }
+
                     .tabs {
                         display: block;
 
                         .categories {
-                            @include display-flex;
+                            &:hover {
+                                height: 7vw;
+                            }
 
                             .tab-link {
                                 margin: 0 2vw;
                                 font-size: 2.4vw;
                                 line-height: 7vw;
                                 width: 28vw;
-
-                                &::before {
-                                    right: -2vw;
-                                    border-left: 2vw solid #262626;
-                                    border-bottom: 7vw solid transparent;
-                                }
-
-                                &::after {
-                                    left: -2vw;
-                                    border-right: 2vw solid #262626;
-                                    border-top: 7vw solid transparent;
-                                }
-
-                                &.active {
-                                    &::before {
-                                        border-left: 2vw solid #707070;
-                                    }
-
-                                    &::after {
-                                        border-right: 2vw solid #707070;
-                                    }
-                                }
-
-                                &:hover {
-                                    &::before {
-                                        border-left: 2vw solid #707070;
-                                    }
-
-                                    &::after {
-                                        border-right: 2vw solid #707070;
-                                    }
-                                }
                             }
                         }
 
@@ -1406,7 +1363,6 @@ footer {
 
                                 .item__img {
                                     height: 60vw;
-                                    margin-bottom: 3.2vw;
                                 }
                             }
 
